@@ -11,12 +11,12 @@ def load_pickle(file_path):
     with open(file_path, 'rb') as file:
         return pickle.load(file)
 
-class_model = load_pickle("/content/drive/MyDrive/ClickStream_Project/Pickles/best_model_class.pkl")
-reg_model = load_pickle("/content/drive/MyDrive/ClickStream_Project/Pickles/best_model_reg.pkl")
-clust_model = load_pickle("/content/drive/MyDrive/ClickStream_Project/Pickles/best_model_clust.pkl")
+class_model = load_pickle("models/best_model_class.pkl")
+reg_model = load_pickle("models/best_model_reg.pkl")
+clust_model = load_pickle("models/best_model_clust.pkl")
 
 try:
-    preprocessor = load_pickle("/content/drive/MyDrive/ClickStream_Project/Pickles/preprocessed_data.pkl")
+    preprocessor = load_pickle("models/preprocessed_data.pkl")
 except Exception as e:
     st.warning(f"Could not load preprocessor: {e}")
     preprocessor = None
