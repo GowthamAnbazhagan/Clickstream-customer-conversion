@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
+#import pickle
 import plotly.express as px
 from sklearn.preprocessing import StandardScaler
 
 st.set_page_config(page_title="Customer Conversion Analysis", layout="wide")
 
 @st.cache_resource
-def load_pickle(file_path):
-    with open(file_path, 'rb') as file:
-        return pickle.load(file)
+def load_pickle(path):
+    #with open(file_path, 'rb') as file:
+        return joblib.load(path)
 
 class_model = load_pickle("models/best_model_class.pkl")
 reg_model = load_pickle("models/best_model_reg.pkl")
